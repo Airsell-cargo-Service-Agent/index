@@ -4,65 +4,74 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Track Shipment | Airsell Cargo - Real-Time Manifest Tracking</title>
-  <meta name="description" content="Track your Air, Ocean, and Overland freight shipments in real time with the Airsell Cargo tracking portal.">
+  <title>Track Shipment | Airsell Cargo</title>
+  <meta name="description" content="Track your cargo shipment with Airsell Cargo using your reference or waybill number.">
+
   <style>
     :root {
       --brand-red: #cc0000;
-      --brand-green: #008800;
       --brand-yellow: #fca311;
-      --primary-dark: #001f3f;
+      --primary-dark: #071527;
       --text-dark: #0f172a;
       --text-gray: #64748b;
       --bg-light: #f8fafc;
-      --card-shadow: 0 12px 35px rgba(0, 31, 63, 0.08);
-      --border-color: #cbd5e1;
+      --border-color: #dfe7ee;
+      --card-shadow: 0 12px 35px rgba(7, 21, 39, 0.08);
+      --brand-green: #16a34a;
     }
+
     * { box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
       margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
       background: var(--bg-light);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
     }
+
     .container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0 24px;
     }
-    /* Top Bar */
+
     .top-bar {
       background: var(--primary-dark);
       color: #94a3b8;
       font-size: 0.82rem;
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
     .top-bar-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
+
     .top-bar-info span { margin-right: 20px; }
-    .top-bar-info a { color: #cbd5e1; text-decoration: none; }
+    .top-bar-info a { color: #dfeaf5; text-decoration: none; }
     .top-bar-info a:hover { color: var(--brand-yellow); }
 
-    /* Header Navigation */
     header {
-      background: #ffffff;
-      border-bottom: 5px solid var(--brand-yellow);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      background: #fff;
+      border-bottom: 4px solid var(--brand-yellow);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
+
     .header-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 0;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
@@ -71,569 +80,586 @@
       margin: 0;
       padding: 0;
     }
+
     .nav-links a {
       text-decoration: none;
       color: var(--primary-dark);
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.85rem;
-      transition: color 0.3s ease;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s ease;
     }
-    .nav-links a.active, .nav-links a:hover { color: var(--brand-red); }
+
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--brand-red);
+    }
+
     .btn-nav-cta {
       background: var(--brand-red);
-      color: #ffffff !important;
+      color: #fff !important;
       padding: 10px 18px;
       border-radius: 6px;
-      font-weight: 700 !important;
     }
-    .btn-nav-cta:hover { background: var(--primary-dark); }
 
-    /* Hero Banner */
-    .hero-banner {
+    .btn-nav-cta:hover {
+      background: var(--primary-dark);
+    }
+
+    .page-header {
+      background: linear-gradient(180deg, var(--primary-dark) 0%, #030a14 100%);
+      color: #fff;
       text-align: center;
-      padding: 50px 20px 60px;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-light) 100%);
-      border-bottom: 1px solid #e2e8f0;
+      padding: 70px 20px 80px;
+      border-bottom: 5px solid var(--brand-yellow);
     }
-    .hero-banner h1 {
-      font-size: 2.5rem;
-      margin: 0 0 10px;
-      font-weight: 800;
-      color: var(--primary-dark);
-    }
-    .breadcrumbs { font-size: 0.9rem; color: var(--text-gray); }
-    .breadcrumbs a { color: var(--primary-dark); text-decoration: none; font-weight: 600; }
 
-    /* Tracking Search Card */
-    .tracking-search-card {
-      background: #ffffff;
+    .page-header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+    }
+
+    .page-header p {
+      margin: 0 auto;
+      max-width: 700px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .tracking-panel {
+      max-width: 900px;
+      margin: -35px auto 50px;
+      background: #fff;
       border-radius: 12px;
       box-shadow: var(--card-shadow);
-      padding: 35px;
-      max-width: 800px;
-      margin: -40px auto 40px;
-      border-top: 5px solid var(--brand-red);
+      border: 1px solid var(--border-color);
+      padding: 32px 28px;
       position: relative;
-      z-index: 10;
+      z-index: 2;
     }
-    .search-title {
-      font-size: 1.2rem;
-      font-weight: 700;
+
+    .tracking-panel h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
       color: var(--primary-dark);
-      margin-bottom: 15px;
       text-align: center;
+      font-size: 1.4rem;
     }
-    .search-form-group { display: flex; gap: 12px; }
-    .tracking-input {
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .search-row input {
       flex: 1;
-      padding: 14px 18px;
-      border: 2px solid var(--border-color);
+      padding: 14px 16px;
+      border: 1px solid var(--border-color);
       border-radius: 8px;
       font-size: 1rem;
-      font-weight: 600;
-      color: var(--primary-dark);
       outline: none;
-      transition: border-color 0.3s ease;
     }
-    .tracking-input:focus { border-color: var(--primary-dark); }
+
+    .search-row input:focus {
+      border-color: var(--brand-red);
+    }
+
     .btn-track {
       background: var(--brand-red);
-      color: #ffffff;
+      color: #fff;
       border: none;
-      padding: 14px 28px;
       border-radius: 8px;
-      font-weight: 700;
-      font-size: 1rem;
+      padding: 14px 22px;
+      font-weight: 800;
       cursor: pointer;
-      transition: background 0.3s ease;
+      min-width: 160px;
     }
-    .btn-track:hover { background: var(--primary-dark); }
-    .sample-hint {
-      font-size: 0.82rem;
-      color: var(--text-gray);
-      margin-top: 10px;
+
+    .sample-note {
+      margin-top: 12px;
       text-align: center;
+      color: var(--text-gray);
+      font-size: 0.9rem;
     }
 
-    /* Tracking Result Container */
-    .result-container {
-      display: none;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .tracking-results {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
     }
 
-    /* Error Card */
-    .error-card {
+    .error-box {
       display: none;
       background: #fee2e2;
       border: 1px solid #fca5a5;
       color: #991b1b;
-      padding: 20px;
+      padding: 18px 20px;
       border-radius: 8px;
-      margin-bottom: 30px;
-      text-align: center;
-      font-weight: 600;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    /* Status Progress Tracker */
-    .status-tracker-card {
-      background: #ffffff;
+    .result-card {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 35px;
       box-shadow: var(--card-shadow);
-      margin-bottom: 30px;
-      border: 1px solid #e2e8f0;
+      padding: 28px;
     }
-    .status-header {
+
+    .status-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid var(--bg-light);
-      padding-bottom: 20px;
-      margin-bottom: 30px;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid #f0f3f7;
+      margin-bottom: 24px;
       flex-wrap: wrap;
-      gap: 15px;
-    }
-    .status-badge-active {
-      background: rgba(0, 136, 0, 0.1);
-      color: var(--brand-green);
-      border: 1px solid var(--brand-green);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
     }
 
-    /* Dynamic Stepper Grid */
-    .milestone-stepper {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      margin: 40px 0 20px;
+    .tracking-id {
+      font-size: 1.05rem;
+      color: var(--text-gray);
     }
-    .step-item {
-      position: relative;
-      z-index: 2;
+
+    .tracking-id strong {
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      margin-left: 8px;
+    }
+
+    .status-badge {
+      background: rgba(22,163,74,0.1);
+      border: 1px solid var(--brand-green);
+      color: var(--brand-green);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 24px 0 30px;
+    }
+
+    .progress-step {
       text-align: center;
-      background: #ffffff;
-      padding: 0 10px;
-      flex: 1;
+      padding: 8px 6px;
     }
+
     .step-icon {
       width: 42px;
       height: 42px;
-      border-radius: 50%;
-      background: #ffffff;
-      border: 3px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 10px;
-      font-weight: bold;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--border-color);
+      margin: 0 auto 8px;
+      font-weight: 800;
       color: var(--text-gray);
     }
-    .step-item.completed .step-icon {
+
+    .progress-step.complete .step-icon {
       background: var(--brand-green);
       border-color: var(--brand-green);
-      color: #ffffff;
+      color: #fff;
     }
-    .step-item.active .step-icon {
-      border-color: var(--brand-red);
+
+    .progress-step.active .step-icon {
       background: var(--brand-yellow);
+      border-color: var(--brand-yellow);
       color: var(--primary-dark);
     }
-    .step-label { font-size: 0.85rem; font-weight: 700; color: var(--primary-dark); }
-    .step-date { font-size: 0.78rem; color: var(--text-gray); }
 
-    /* Details Grid */
+    .step-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .step-date {
+      font-size: 0.72rem;
+      color: var(--text-gray);
+    }
+
     .details-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 30px;
-      margin-bottom: 40px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
     }
-    .details-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: var(--card-shadow);
-      border: 1px solid #e2e8f0;
-    }
-    .details-card h3 {
-      margin-top: 0;
-      color: var(--primary-dark);
-      font-size: 1.2rem;
-      border-bottom: 2px solid var(--bg-light);
-      padding-bottom: 12px;
-    }
-    .info-table { width: 100%; border-collapse: collapse; }
-    .info-table td { padding: 10px 0; font-size: 0.9rem; border-bottom: 1px solid #f1f5f9; }
-    .info-table td.label { color: var(--text-gray); font-weight: 600; width: 40%; }
-    .info-table td.val { color: var(--primary-dark); font-weight: 700; }
 
-    /* Event Timeline Log */
-    .timeline-list { list-style: none; padding: 0; margin: 0; }
-    .timeline-item {
-      position: relative;
-      padding-left: 25px;
-      padding-bottom: 20px;
-      border-left: 2px solid var(--border-color);
+    .panel-box {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 22px 20px;
     }
-    .timeline-item:last-child { border-left: 2px solid transparent; }
-    .timeline-item::before {
-      content: '';
+
+    .panel-box h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px 0;
+      border-bottom: 1px solid #eef2f7;
+      font-size: 0.92rem;
+    }
+
+    td.label {
+      width: 40%;
+      color: var(--text-gray);
+      font-weight: 700;
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline li {
+      position: relative;
+      margin-bottom: 16px;
+      padding-left: 22px;
+      border-left: 2px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+
+    .timeline li::before {
+      content: "";
       position: absolute;
       left: -6px;
       top: 0;
       width: 10px;
       height: 10px;
-      border-radius: 50%;
       background: var(--brand-red);
+      border-radius: 50%;
     }
-    .timeline-time { font-size: 0.78rem; color: var(--text-gray); font-weight: 600; }
-    .timeline-event { font-size: 0.88rem; font-weight: 700; color: var(--primary-dark); }
-    .timeline-location { font-size: 0.82rem; color: var(--text-gray); }
 
-    /* Help Banner */
+    .timeline .time {
+      font-size: 0.75rem;
+      color: var(--text-gray);
+      font-weight: 700;
+    }
+
+    .timeline .event {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .timeline .location {
+      font-size: 0.8rem;
+      color: var(--text-gray);
+    }
+
     .support-banner {
       background: var(--primary-dark);
-      color: #ffffff;
+      color: #fff;
       border-radius: 12px;
-      padding: 30px;
+      padding: 22px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 4px solid var(--brand-yellow);
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 20px;
-    }
-    .btn-support-whatsapp {
-      background: #25d366;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      border-top: 4px solid var(--brand-yellow);
     }
 
-    /* Footer */
+    .support-banner a {
+      text-decoration: none;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
     .site-footer {
       background: var(--primary-dark);
-      color: #ffffff;
-      padding: 50px 0 30px;
-      margin-top: 60px;
-      font-size: 0.9rem;
+      color: #fff;
+      padding: 50px 0 25px;
       border-top: 3px solid var(--brand-yellow);
     }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 30px; }
-    .footer-col h4 { color: var(--brand-yellow); margin-top: 0; margin-bottom: 15px; font-size: 1.1rem; }
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
-    .footer-col li { margin-bottom: 8px; }
-    .footer-col a { color: #94a3b8; text-decoration: none; transition: color 0.3s ease; }
-    .footer-col a:hover { color: #ffffff; }
 
-    @media (max-width: 768px) {
-      .details-grid { grid-template-columns: 1fr; }
-      .milestone-stepper { flex-direction: column; gap: 20px; }
-      .search-form-group { flex-direction: column; }
-      .footer-grid { grid-template-columns: 1fr; gap: 25px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .footer-col h3 {
+      color: var(--brand-yellow);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; text-decoration: none; }
+    .footer-col a:hover { color: #fff; }
+
+    @media (max-width: 900px) {
+      .search-row, .details-grid, .footer-grid, .progress-grid { grid-template-columns: 1fr; display: grid; }
+      .search-row { display: grid; }
       .top-bar { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-flex">
-      <div class="top-bar-info">
-        <span>📍 Hargeisa Airport & Berbera Port Hubs</span>
-        <span>✉️ <a href="mailto:info@airsellcargo.com">info@airsellcargo.com</a></span>
-      </div>
-      <div>
-        <span>🕒 Mon–Sat: 8:00 AM – 6:00 PM EAT</span>
-      </div>
+<div class="top-bar">
+  <div class="container top-bar-flex">
+    <div class="top-bar-info">
+      <span>📍 Hargeisa Airport & Berbera Port</span>
+      <span>✉️ <a href="mailto:info@airsellcargo.com">info@airsellcargo.com</a></span>
+    </div>
+    <div>
+      <span>🕒 Mon–Sat: 8:00 AM – 6:00 PM EAT</span>
     </div>
   </div>
+</div>
 
-  <!-- Header Navigation -->
-  <header>
-    <div class="container header-flex">
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="Airsell Cargo" width="180">
-        </a>
-      </div>
-      <nav aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="tracking.html" class="active" aria-current="tracking.html">Tracking</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="quote.html" class="btn-nav-cta">Get a Quote</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="Airsell Cargo" width="180">
+      </a>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero-banner">
-    <div class="container">
-      <h1>Real-Time Cargo Tracking</h1>
-      <p class="breadcrumbs"><a href="index.html">Home</a> / Tracking</p>
-    </div>
-  </section>
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tracking.html" class="active" aria-current="page">Tracking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="btn-nav-cta">Quote</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- Tracking Search Section -->
+<section class="page-header">
   <div class="container">
-    <div class="tracking-search-card">
-      <div class="search-title">Enter Waybill or Reference Number</div>
-      <form onsubmit="handleTrackingSearch(event)">
-        <div class="search-form-group">
-          <input type="text" id="trackingInput" class="tracking-input" placeholder="e.g. ASC-2026-8891 or AWB-991823" required>
-          <button type="submit" class="btn-track">Track Cargo →</button>
-        </div>
-      </form>
-      <div class="sample-hint">
-        Example Reference ID: <strong>ASC-2026-8891</strong>
+    <h1>Track Your Shipment</h1>
+    <p>Enter your waybill number or reference code to view the latest movement status of your cargo.</p>
+  </div>
+</section>
+
+<div class="tracking-panel">
+  <h2>Enter Waybill or Reference Number</h2>
+  <form onsubmit="handleTrackingSearch(event)">
+    <div class="search-row">
+      <input id="trackingInput" type="text" placeholder="e.g. ASC-2026-8891" required>
+      <button type="submit" class="btn-track">Track Cargo</button>
+    </div>
+  </form>
+  <div class="sample-note">Example: <strong>ASC-2026-8891</strong></div>
+</div>
+
+<main class="tracking-results">
+  <div id="trackingError" class="error-box"></div>
+
+  <div id="trackingResult" class="result-card">
+    <div class="status-top">
+      <div class="tracking-id">Tracking ID: <strong id="dispTrackingId">--</strong></div>
+      <div id="dispStatusBadge" class="status-badge">--</div>
+    </div>
+
+    <div id="milestoneContainer" class="progress-grid"></div>
+
+    <div class="details-grid">
+      <div class="panel-box">
+        <h3>Shipment Details</h3>
+        <table>
+          <tr><td class="label">Transport Mode</td><td id="dispMode">--</td></tr>
+          <tr><td class="label">Origin Hub</td><td id="dispOrigin">--</td></tr>
+          <tr><td class="label">Destination Hub</td><td id="dispDest">--</td></tr>
+          <tr><td class="label">Cargo Details</td><td id="dispWeight">--</td></tr>
+          <tr><td class="label">Estimated Delivery</td><td id="dispEstDelivery">--</td></tr>
+        </table>
       </div>
+
+      <div class="panel-box">
+        <h3>Activity Log</h3>
+        <ul id="dispTimeline" class="timeline"></ul>
+      </div>
+    </div>
+
+    <div class="support-banner">
+      <div>
+        <h4 style="margin:0 0 6px;">Questions about this shipment?</h4>
+        <p style="margin:0; color:#cbd5e1; font-size:0.9rem;">Contact our dispatch team with your tracking reference.</p>
+      </div>
+      <a id="whatsappSupportBtn" href="#" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
     </div>
   </div>
+</main>
 
-  <!-- Results & Error Area -->
-  <main class="container">
-    <!-- Dynamic Error Alert -->
-    <div id="trackingError" class="error-card"></div>
-
-    <!-- Tracking Result Display Container -->
-    <div id="trackingResult" class="result-container">
-      <div class="status-tracker-card">
-        <div class="status-header">
-          <div>
-            <span style="color: var(--text-gray); font-size: 0.85rem;">Tracking ID:</span>
-            <strong id="dispTrackingId" style="font-size: 1.3rem; color: var(--primary-dark); margin-left: 8px;"></strong>
-          </div>
-          <div id="dispStatusBadge" class="status-badge-active"></div>
-        </div>
-
-        <!-- Dynamic Milestone Progress Steps -->
-        <div id="milestoneContainer" class="milestone-stepper"></div>
-      </div>
-
-      <!-- Specifications & Activity Log -->
-      <div class="details-grid">
-        <div class="details-card">
-          <h3>Shipment Specifications</h3>
-          <table class="info-table">
-            <tr><td class="label">Transport Mode:</td><td class="val" id="dispMode">--</td></tr>
-            <tr><td class="label">Origin Hub:</td><td class="val" id="dispOrigin">--</td></tr>
-            <tr><td class="label">Destination Hub:</td><td class="val" id="dispDest">--</td></tr>
-            <tr><td class="label">Weight & Quantity:</td><td class="val" id="dispWeight">--</td></tr>
-            <tr><td class="label">Estimated Delivery:</td><td class="val" id="dispEstDelivery" style="color: var(--brand-red);">--</td></tr>
-          </table>
-        </div>
-
-        <div class="details-card">
-          <h3>Activity Log</h3>
-          <ul class="timeline-list" id="dispTimeline"></ul>
-        </div>
-      </div>
-
-      <!-- Support Banner -->
-      <div class="support-banner">
-        <div>
-          <h4 style="margin: 0 0 5px; font-size: 1.2rem;">Questions About This Shipment?</h4>
-          <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem;">Contact our logistics dispatch center directly with your tracking code.</p>
-        </div>
-        <a href="#" id="whatsappSupportBtn" target="_blank" class="btn-support-whatsapp">💬 Chat on WhatsApp</a>
-      </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h3>Airsell Cargo</h3>
+      <p style="color:#94a3b8; margin-bottom:10px;">Connecting Somaliland to the World</p>
+      <p style="color:#64748b; font-size:0.85rem;">© 2026 Airsell Cargo. All rights reserved.</p>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h4 style="color: #ffffff;">Airsell Cargo</h4>
-        <p style="color: #94a3b8;">Global Freight & Logistics Solutions</p>
-        <p style="color: #64748b; font-size: 0.85rem;">© 2026 Airsell Cargo. All rights reserved.</p>
-      </div>
-      <div class="footer-col">
-        <h4 style="color: #ffffff;">Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="quote.html">Get a Quote</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 style="color: #ffffff;">Locations</h4>
-        <p style="color: #94a3b8; margin-bottom: 6px;">📍 Hargeisa Airport (HGA)</p>
-        <p style="color: #94a3b8;">📍 Berbera Port (BBO)</p>
-      </div>
-      <div class="footer-col">
-        <h4 style="color: #ffffff;">Contact</h4>
-        <p style="color: #94a3b8; margin-bottom: 6px;">✉️ info@airsellcargo.com</p>
-        <p style="color: #94a3b8;">📞 +252 63 412 5763</p>
-      </div>
-      <div class="footer-col">
-        <h4 style="color: #ffffff;">Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="quote.html">Quote</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
 
-  <script>
-    // Sample Database Mock (Replace this function with a real API fetch call when ready)
-    async function fetchShipmentData(trackingId) {
-      const mockDatabase = {
-        "ASC-2026-8891": {
-          trackingId: "ASC-2026-8891",
-          status: "In Transit (On Schedule)",
-          transportMode: "Air Express Freight",
-          originHub: "Dubai Cargo Hub (DXB)",
-          destinationHub: "Hargeisa Intl Airport (HGA)",
-          weightAndQty: "8 Cartons / 145.50 KG",
-          estimatedDelivery: "Aug 14, 2026 - 02:00 PM EAT",
-          milestones: [
-            { label: "Booked", date: "Aug 08, 2026", icon: "✓", state: "completed" },
-            { label: "Received", date: "Aug 09, 2026", icon: "✓", state: "completed" },
-            { label: "In Transit", date: "Aug 11, 2026", icon: "✈️", state: "active" },
-            { label: "Customs Clear", date: "Pending", icon: "📑", state: "" },
-            { label: "Delivered", date: "Est. Aug 14", icon: "📦", state: "" }
-          ],
-          activityLog: [
-            { time: "Aug 12, 2026 - 18:30 EAT", event: "Departed Transit Hub", location: "Sharjah Airport Hub" },
-            { time: "Aug 10, 2026 - 14:15 EAT", event: "Export Customs Cleared", location: "Dubai Air Cargo Terminal" },
-            { time: "Aug 09, 2026 - 09:00 EAT", event: "Cargo Received", location: "Airsell Logistics Warehouse, UAE" }
-          ]
-        }
-      };
+    <div class="footer-col">
+      <h3>Locations</h3>
+      <p style="color:#94a3b8; margin-bottom:6px;">📍 Hargeisa Airport (HGA)</p>
+      <p style="color:#94a3b8;">📍 Berbera Port (BBO)</p>
+    </div>
 
-      // To connect a real backend API endpoint, uncomment and modify line below:
-      // const res = await fetch(`https://api.airsellcargo.com/v1/shipments/${encodeURIComponent(trackingId)}`);
-      // if (!res.ok) throw new Error("Not found");
-      // return await res.json();
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p style="color:#94a3b8; margin-bottom:6px;">✉️ info@airsellcargo.com</p>
+      <p style="color:#94a3b8;">📞 +252 63 412 5763</p>
+    </div>
 
-      if (mockDatabase[trackingId]) {
-        return mockDatabase[trackingId];
-      } else {
-        throw new Error("Invalid tracking number");
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  async function fetchShipmentData(trackingId) {
+    const mockDatabase = {
+      'ASC-2026-8891': {
+        trackingId: 'ASC-2026-8891',
+        status: 'In Transit',
+        transportMode: 'Air Express Freight',
+        originHub: 'Dubai Cargo Hub (DXB)',
+        destinationHub: 'Hargeisa Airport (HGA)',
+        weightAndQty: '8 cartons / 145.50 kg',
+        estimatedDelivery: 'Aug 14, 2026 - 02:00 PM EAT',
+        milestones: [
+          { label: 'Booked', date: 'Aug 08', icon: '✓', state: 'complete' },
+          { label: 'Received', date: 'Aug 09', icon: '✓', state: 'complete' },
+          { label: 'In Transit', date: 'Aug 11', icon: '✈', state: 'active' },
+          { label: 'Customs', date: 'Pending', icon: '📑', state: '' },
+          { label: 'Delivered', date: 'Est. Aug 14', icon: '📦', state: '' }
+        ],
+        activityLog: [
+          { time: 'Aug 12, 2026 - 18:30 EAT', event: 'Departed transit hub', location: 'Sharjah Airport Hub' },
+          { time: 'Aug 10, 2026 - 14:15 EAT', event: 'Export customs cleared', location: 'Dubai Air Cargo Terminal' },
+          { time: 'Aug 09, 2026 - 09:00 EAT', event: 'Cargo received at origin', location: 'Dubai logistics warehouse' }
+        ]
       }
-    }
+    };
 
-    async function handleTrackingSearch(e) {
-      if (e) e.preventDefault();
+    if (mockDatabase[trackingId]) return mockDatabase[trackingId];
+    throw new Error('Invalid tracking number');
+  }
 
-      const trackingInput = document.getElementById('trackingInput').value.trim().toUpperCase();
-      const resultBox = document.getElementById('trackingResult');
-      const errorBox = document.getElementById('trackingError');
+  function renderShipmentDetails(data) {
+    document.getElementById('dispTrackingId').textContent = data.trackingId;
+    document.getElementById('dispStatusBadge').textContent = data.status;
+    document.getElementById('dispMode').textContent = data.transportMode;
+    document.getElementById('dispOrigin').textContent = data.originHub;
+    document.getElementById('dispDest').textContent = data.destinationHub;
+    document.getElementById('dispWeight').textContent = data.weightAndQty;
+    document.getElementById('dispEstDelivery').textContent = data.estimatedDelivery;
 
-      // Hide active display boxes
-      resultBox.style.display = 'none';
-      errorBox.style.display = 'none';
+    const waText = `Hello Airsell Cargo, I am inquiring about shipment ${data.trackingId}.`;
+    document.getElementById('whatsappSupportBtn').href = 'https://wa.me/252634125763?text=' + encodeURIComponent(waText);
 
-      if (!trackingInput) return;
-
-      try {
-        const data = await fetchShipmentData(trackingInput);
-        renderShipmentDetails(data);
-      } catch (err) {
-        errorBox.textContent = `No shipment found for tracking number "${trackingInput}". Please check the ID and try again.`;
-        errorBox.style.display = 'block';
-      }
-    }
-
-    function renderShipmentDetails(data) {
-      const resultBox = document.getElementById('trackingResult');
-
-      // Populate text elements using textContent to prevent XSS
-      document.getElementById('dispTrackingId').textContent = data.trackingId;
-      document.getElementById('dispStatusBadge').textContent = data.status;
-      document.getElementById('dispMode').textContent = data.transportMode;
-      document.getElementById('dispOrigin').textContent = data.originHub;
-      document.getElementById('dispDest').textContent = data.destinationHub;
-      document.getElementById('dispWeight').textContent = data.weightAndQty;
-      document.getElementById('dispEstDelivery').textContent = data.estimatedDelivery;
-
-      // Update WhatsApp URL safely
-      const waMsg = `Hello Airsell Cargo, I am inquiring about my shipment ID: ${data.trackingId}`;
-      document.getElementById('whatsappSupportBtn').href = `https://wa.me/252634125763?text=${encodeURIComponent(waMsg)}`;
-
-      // Populate Milestones dynamically
-      const milestoneContainer = document.getElementById('milestoneContainer');
-      milestoneContainer.innerHTML = '';
-      data.milestones.forEach(m => {
-        const stepDiv = document.createElement('div');
-        stepDiv.className = `step-item ${m.state}`.trim();
-        
-        const iconDiv = document.createElement('div');
-        iconDiv.className = 'step-icon';
-        iconDiv.textContent = m.icon;
-
-        const labelDiv = document.createElement('div');
-        labelDiv.className = 'step-label';
-        labelDiv.textContent = m.label;
-
-        const dateDiv = document.createElement('div');
-        dateDiv.className = 'step-date';
-        dateDiv.textContent = m.date;
-
-        stepDiv.appendChild(iconDiv);
-        stepDiv.appendChild(labelDiv);
-        stepDiv.appendChild(dateDiv);
-        milestoneContainer.appendChild(stepDiv);
-      });
-
-      // Populate Activity Log dynamically
-      const timelineEl = document.getElementById('dispTimeline');
-      timelineEl.innerHTML = '';
-      data.activityLog.forEach(log => {
-        const li = document.createElement('li');
-        li.className = 'timeline-item';
-
-        const timeDiv = document.createElement('div');
-        timeDiv.className = 'timeline-time';
-        timeDiv.textContent = log.time;
-
-        const eventDiv = document.createElement('div');
-        eventDiv.className = 'timeline-event';
-        eventDiv.textContent = log.event;
-
-        const locDiv = document.createElement('div');
-        locDiv.className = 'timeline-location';
-        locDiv.textContent = log.location;
-
-        li.appendChild(timeDiv);
-        li.appendChild(eventDiv);
-        li.appendChild(locDiv);
-        timelineEl.appendChild(li);
-      });
-
-      resultBox.style.display = 'block';
-      resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const trackingIdParam = urlParams.get('id');
-      if (trackingIdParam) {
-        document.getElementById('trackingInput').value = trackingIdParam;
-        handleTrackingSearch();
-      }
+    const milestoneContainer = document.getElementById('milestoneContainer');
+    milestoneContainer.innerHTML = '';
+    data.milestones.forEach((m) => {
+      const el = document.createElement('div');
+      el.className = 'progress-step ' + (m.state || '').trim();
+      el.innerHTML = `
+        <div class="step-icon">${m.icon || '•'}</div>
+        <div class="step-label">${m.label}</div>
+        <div class="step-date">${m.date}</div>
+      `;
+      milestoneContainer.appendChild(el);
     });
-  </script>
+
+    const timeline = document.getElementById('dispTimeline');
+    timeline.innerHTML = '';
+    data.activityLog.forEach((log) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <div class="time">${log.time}</div>
+        <div class="event">${log.event}</div>
+        <div class="location">${log.location}</div>
+      `;
+      timeline.appendChild(li);
+    });
+
+    document.getElementById('trackingResult').style.display = 'block';
+  }
+
+  async function handleTrackingSearch(event) {
+    if (event) event.preventDefault();
+    const trackingInput = document.getElementById('trackingInput').value.trim().toUpperCase();
+    const resultBox = document.getElementById('trackingResult');
+    const errorBox = document.getElementById('trackingError');
+
+    resultBox.style.display = 'none';
+    errorBox.style.display = 'none';
+
+    if (!trackingInput) return;
+
+    try {
+      const data = await fetchShipmentData(trackingInput);
+      renderShipmentDetails(data);
+    } catch (err) {
+      errorBox.textContent = 'No shipment found for "' + trackingInput + '". Please check the waybill number and try again.';
+      errorBox.style.display = 'block';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const trackingId = params.get('id');
+    if (trackingId) {
+      document.getElementById('trackingInput').value = trackingId;
+      handleTrackingSearch();
+    }
+  });
+</script>
+
 </body>
 </html>
