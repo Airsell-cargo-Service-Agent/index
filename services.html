@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Services | Airsell Cargo - Global Freight & Logistics Solutions</title>
-  <meta name="description" content="Explore comprehensive freight forwarding, air and ocean cargo, customs brokerage, warehousing, project cargo, and end-to-end logistics services delivered by Airsell Cargo.">
-  
-  <style>  
+  <title>Freight Forwarding Services | Airsell Cargo</title>
+  <meta name="description" content="Professional air freight, ocean freight, road transport, customs clearance, warehousing, and project cargo services delivered by Airsell Cargo across East Africa and global trade lanes.">
+
+  <style>
     :root {
       --brand-red: #cc0000;
       --brand-yellow: #fca311;
@@ -15,33 +15,32 @@
       --text-dark: #0f172a;
       --text-gray: #64748b;
       --bg-light: #f8fafc;
+      --border-color: #dfe7ee;
       --card-shadow: 0 12px 35px rgba(7, 21, 39, 0.08);
-      --border-color: #cbd5e1;
     }
-    
+
     * { box-sizing: border-box; }
 
-    body { 
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
-      margin: 0; 
-      background: var(--bg-light); 
-      color: var(--text-dark); 
-      line-height: 1.6; 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
     }
-    
-    .container { 
-      max-width: 1200px; 
-      margin: auto; 
-      padding: 0 24px; 
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
-    
-    /* Top Bar */
+
     .top-bar {
       background: var(--primary-dark);
       color: #94a3b8;
       font-size: 0.82rem;
       padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .top-bar-flex {
@@ -53,84 +52,82 @@
     }
 
     .top-bar-info span { margin-right: 20px; }
-    .top-bar-info a { color: #cbd5e1; text-decoration: none; }
+    .top-bar-info a { color: #dfeaf5; text-decoration: none; }
     .top-bar-info a:hover { color: var(--brand-yellow); }
 
-    /* Header Navigation */
-    header { 
-      background: #ffffff; 
-      border-bottom: 4px solid var(--brand-yellow); 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    header {
+      background: #fff;
+      border-bottom: 4px solid var(--brand-yellow);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    
-    .header-flex { 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 15px 0;
     }
-    
-    .nav-links { 
-      list-style: none; 
-      display: flex; 
+
+    .nav-links {
+      list-style: none;
+      display: flex;
       align-items: center;
-      gap: 20px; 
-      margin: 0; 
+      gap: 20px;
+      margin: 0;
       padding: 0;
     }
-    
-    .nav-links a { 
-      text-decoration: none; 
-      color: var(--primary-dark); 
-      font-weight: 600; 
-      text-transform: uppercase; 
-      font-size: 0.85rem; 
-      transition: color 0.3s ease; 
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s ease;
     }
-    
-    .nav-links a.active, .nav-links a:hover { 
-      color: var(--brand-red); 
+
+    .nav-links a.active, .nav-links a:hover {
+      color: var(--brand-red);
     }
 
     .btn-nav-cta {
       background: var(--brand-red);
-      color: #ffffff !important;
+      color: #fff !important;
       padding: 10px 18px;
       border-radius: 6px;
-      font-weight: 700 !important;
     }
 
     .btn-nav-cta:hover {
       background: var(--primary-dark);
     }
-    
-    /* Hero Banner */
-    .hero-banner { 
-      text-align: center; 
-      padding: 60px 20px 70px; 
-      background: linear-gradient(180deg, var(--primary-dark) 0%, #030a14 100%);
-      color: #ffffff;
-      border-bottom: 5px solid var(--brand-yellow); 
-    }
-    
-    .hero-banner h1 { 
-      font-size: 2.8rem; 
-      margin: 0 0 12px; 
-      font-weight: 800; 
-      color: #ffffff; 
-    } 
 
-    .hero-banner p {
+    .page-header {
+      background: linear-gradient(180deg, var(--primary-dark) 0%, #030a14 100%);
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px 80px;
+      border-bottom: 5px solid var(--brand-yellow);
+    }
+
+    .page-header h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+    }
+
+    .page-header p {
       max-width: 720px;
-      margin: 0 auto 15px;
+      margin: 0 auto;
       color: #cbd5e1;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
     .breadcrumbs {
+      margin-top: 18px;
       font-size: 0.9rem;
       color: #94a3b8;
     }
@@ -138,34 +135,31 @@
     .breadcrumbs a {
       color: var(--brand-yellow);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* Services Grid */
     .services-wrapper {
       max-width: 1200px;
       margin: -30px auto 60px;
-      position: relative;
-      z-index: 10;
       padding: 0 24px;
+      position: relative;
+      z-index: 2;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
+      gap: 28px;
     }
 
     .service-card {
-      background: #ffffff;
+      background: #fff;
       color: var(--text-dark);
-      padding: 32px 24px;
-      border-radius: 10px;
-      box-shadow: 0 8px 25px rgba(7, 21, 39, 0.06);
+      padding: 30px 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
       border-top: 5px solid var(--primary-dark);
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 8px 25px rgba(7, 21, 39, 0.05);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -178,44 +172,44 @@
 
     .service-card .icon {
       font-size: 2.2rem;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     .service-card h2 {
       color: var(--primary-dark);
       margin-top: 0;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
       font-size: 1.35rem;
     }
 
     .service-card p {
       color: var(--text-gray);
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.7;
+      margin: 0 0 18px;
     }
 
     .service-card ul {
       list-style: none;
       padding: 0;
-      margin: 0 0 25px 0;
+      margin: 0 0 22px;
     }
 
     .service-card li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
       font-size: 0.9rem;
       color: var(--text-dark);
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
       font-weight: 500;
     }
 
     .service-card li::before {
       content: '✓';
-      color: var(--brand-red);
       position: absolute;
       left: 0;
-      font-weight: bold;
+      color: var(--brand-red);
+      font-weight: 800;
     }
 
     .service-link {
@@ -223,22 +217,34 @@
       color: var(--brand-red);
       text-decoration: none;
       font-weight: 700;
-      font-size: 0.95rem;
-      transition: color 0.2s;
+      font-size: 0.94rem;
     }
 
     .service-link:hover {
       color: var(--primary-dark);
     }
 
-    /* Workflow Section */
-    .workflow-section {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 50px 30px;
-      margin-top: 50px;
-      box-shadow: 0 8px 25px rgba(7, 21, 39, 0.04);
+    .process-section {
+      padding: 20px 0 70px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      color: var(--primary-dark);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--text-gray);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .workflow-steps {
@@ -249,43 +255,44 @@
     }
 
     .step {
-      text-align: center;
-      padding: 20px 15px;
-      background: var(--bg-light);
-      border-radius: 8px;
+      background: #fff;
       border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(7, 21, 39, 0.03);
     }
 
     .step-number {
-      display: inline-block;
-      width: 36px;
-      height: 36px;
-      background-color: var(--brand-yellow);
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand-yellow);
       color: var(--primary-dark);
       border-radius: 50%;
-      line-height: 36px;
-      font-weight: bold;
+      font-weight: 900;
       margin-bottom: 12px;
     }
 
     .step h4 {
+      margin: 0 0 8px;
       font-size: 1rem;
       color: var(--primary-dark);
-      margin-bottom: 6px;
     }
 
     .step p {
-      font-size: 0.85rem;
-      color: var(--text-gray);
       margin: 0;
+      color: var(--text-gray);
+      font-size: 0.86rem;
     }
 
-    /* Why Choose Us */
     .why-section {
       background: var(--primary-dark);
-      color: #ffffff;
+      color: #fff;
       padding: 60px 0;
-      border-top: 3px solid var(--brand-yellow);
+      border-top: 4px solid var(--brand-yellow);
     }
 
     .why-grid {
@@ -297,56 +304,56 @@
     }
 
     .why-item {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px 24px;
-      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
       border-left: 4px solid var(--brand-yellow);
-      font-size: 0.95rem;
+      border-radius: 8px;
+      padding: 20px 22px;
       color: #e2e8f0;
+      font-size: 0.95rem;
     }
 
-    /* Footer */
-    .site-footer { 
-      background: var(--primary-dark); 
-      color: #ffffff; 
-      padding: 45px 0 25px; 
-      font-size: 0.9rem;
+    .site-footer {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 50px 0 25px;
       border-top: 3px solid var(--brand-yellow);
     }
 
-    .footer-grid { 
-      display: grid; 
-      grid-template-columns: 1.5fr repeat(4, 1fr); 
-      gap: 30px; 
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 24px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 30px;
     }
 
     .footer-col h3 {
       color: var(--brand-yellow);
       margin-top: 0;
       margin-bottom: 15px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
     .footer-col li { margin-bottom: 8px; }
-    .footer-col a { color: #94a3b8; text-decoration: none; transition: color 0.3s ease; }
-    .footer-col a:hover { color: #ffffff; }
+    .footer-col a { color: #94a3b8; text-decoration: none; }
+    .footer-col a:hover { color: #fff; }
 
     @media (max-width: 900px) {
       .services-grid, .why-grid, .footer-grid { grid-template-columns: 1fr; }
+      .top-bar { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- Top Notification Bar -->
 <div class="top-bar">
   <div class="container top-bar-flex">
     <div class="top-bar-info">
-      <span>📍 Hargeisa Airport & Berbera Port Hubs</span>
+      <span>📍 Hargeisa Airport & Berbera Port</span>
       <span>✉️ <a href="mailto:info@airsellcargo.com">info@airsellcargo.com</a></span>
     </div>
     <div>
@@ -355,249 +362,244 @@
   </div>
 </div>
 
-<!-- Main Header -->
 <header>
   <div class="container header-flex">
     <div class="logo">
       <a href="index.html">
-        <img src="logo.png" alt="Airsell Cargo Service Agent" width="180">
+        <img src="logo.png" alt="Airsell Cargo" width="180">
       </a>
     </div>
-     
+
     <nav aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="services.html" class="active" aria-current="page">SERVICES</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="tracking.html">TRACKING</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="quote.html" class="btn-nav-cta">QUOTE</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="quote.html" class="btn-nav-cta">Quote</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Hero Section -->
-<section class="hero-banner">
+<section class="page-header">
   <div class="container">
-    <h1>Freight Forwarding Services Built for Global Trade</h1>
-    <p>From complex import/export movements to day-to-day cargo coordination, Airsell Cargo delivers dependable freight forwarding solutions across air, ocean, road, customs, and warehousing networks.</p>
+    <h1>Freight Solutions Built for Global Trade</h1>
+    <p>From urgent air cargo to port-to-door ocean services, our freight forwarding expertise helps businesses move goods safely, compliantly, and on time.</p>
     <div class="breadcrumbs"><a href="index.html">Home</a> / Services</div>
   </div>
 </section>
 
-<!-- Services Grid Container -->
 <div class="services-wrapper">
   <div class="services-grid">
-    
-    <!-- Service 1: Air Freight Forwarding -->
+
     <div class="service-card">
       <div>
         <div class="icon">✈️</div>
-        <h2>Air Freight Forwarding</h2>
-        <p>Time-sensitive cargo solutions for urgent shipments, high-value goods, and perishable consignments requiring speed, precision, and dependable tracking.</p>
+        <h2>Air Freight</h2>
+        <p>Fast and dependable air cargo solutions for urgent shipments, high-value goods, temperature-sensitive cargo, and time-critical commercial deliveries.</p>
         <ul>
-          <li>Priority booking with airline and consolidator partners</li>
-          <li>Door-to-door and airport-to-airport shipping</li>
-          <li>Express document and parcel handling</li>
-          <li>Temperature-sensitive and fragile cargo care</li>
+          <li>Express and scheduled air freight</li>
+          <li>Airport-to-airport and door-to-door service</li>
+          <li>Priority handling at HGA and partner gateways</li>
+          <li>Consolidation and charter support</li>
         </ul>
       </div>
-      <div>
-        <a href="quote.html" class="service-link">Request Air Quote →</a>
-      </div>
+      <div><a href="quote.html" class="service-link">Request Air Quote →</a></div>
     </div>
 
-    <!-- Service 2: Ocean Freight Forwarding -->
     <div class="service-card">
       <div>
         <div class="icon">🚢</div>
-        <h2>Ocean Freight Forwarding</h2>
-        <p>Flexible shipping options for bulk, containerized, and regular cargo needs with a strong focus on cost control, schedule reliability, and cargo visibility.</p>
+        <h2>Ocean Freight</h2>
+        <p>Flexible sea freight solutions for containers, bulk cargo, and project shipments with route planning designed around cost, schedule, and reliability.</p>
         <ul>
           <li>FCL and LCL cargo management</li>
-          <li>Port-to-port and intermodal coordination</li>
-          <li>Consolidation and deconsolidation support</li>
-          <li>Carrier booking and transit monitoring</li>
+          <li>Berbera Port coordination and customs handoff</li>
+          <li>Import/export consolidation planning</li>
+          <li>Breakbulk and heavy-lift support</li>
         </ul>
       </div>
-      <div>
-        <a href="quote.html" class="service-link">Request Ocean Quote →</a>
-      </div>
+      <div><a href="quote.html" class="service-link">Request Ocean Quote →</a></div>
     </div>
 
-    <!-- Service 3: Road Freight & Distribution -->
     <div class="service-card">
       <div>
         <div class="icon">🚛</div>
-        <h2>Road Freight & Cross-Border Distribution</h2>
-        <p>Reliable inland transport and regional distribution services that connect origin points, ports, and final destinations across key trade corridors.</p>
+        <h2>Road Freight & Distribution</h2>
+        <p>Efficient regional transport for inland delivery, cross-border movements, and final-mile distribution across key trade corridors.</p>
         <ul>
-          <li>Container drayage and inland haulage</li>
-          <li>Regional distribution and line-haul movement</li>
-          <li>Scheduled transport with proof of delivery</li>
-          <li>Flexible routing for urgent shipments</li>
+          <li>Port drayage and inland haulage</li>
+          <li>Cross-border trucking coordination</li>
+          <li>Time-definite delivery scheduling</li>
+          <li>POD and route tracking support</li>
         </ul>
       </div>
-      <div>
-        <a href="contact.html" class="service-link">Plan Land Transport →</a>
-      </div>
+      <div><a href="contact.html" class="service-link">Inquire About Haulage →</a></div>
     </div>
 
-    <!-- Service 4: Customs Brokerage & Compliance -->
     <div class="service-card">
       <div>
         <div class="icon">📋</div>
-        <h2>Customs Brokerage & Trade Compliance</h2>
-        <p>Professional documentation and regulatory support to minimize delays, protect compliance, and ensure smooth import and export clearance at every checkpoint.</p>
+        <h2>Customs Brokerage</h2>
+        <p>Professional clearance support that minimizes delays, keeps documentation complete, and aligns shipments with customs and regulatory requirements.</p>
         <ul>
-          <li>Import and export declaration filing</li>
-          <li>HS code classification and tariff review</li>
-          <li>Invoice, packing list, and bill of lading checks</li>
-          <li>Compliance advisory and customs issue resolution</li>
+          <li>Import and export declaration processing</li>
+          <li>HS code and duty classification support</li>
+          <li>Document review and regulatory compliance</li>
+          <li>Border clearance coordination</li>
         </ul>
       </div>
-      <div>
-        <a href="contact.html" class="service-link">Consult Brokerage →</a>
-      </div>
+      <div><a href="contact.html" class="service-link">Consult Brokerage →</a></div>
     </div>
 
-    <!-- Service 5: Warehousing & Distribution -->
     <div class="service-card">
       <div>
         <div class="icon">📦</div>
-        <h2>Warehousing & Inventory Management</h2>
-        <p>Secure storage, stock control, and value-added handling designed to improve supply-chain flow, inventory visibility, and order readiness.</p>
+        <h2>Warehousing & Storage</h2>
+        <p>Secure short- and long-term storage solutions for inventory control, consolidation, cross-docking, and value-added handling.</p>
         <ul>
-          <li>Short- and long-term warehouse storage</li>
-          <li>Palletization, labeling, and order handling</li>
+          <li>Warehouse reception and dispatch</li>
+          <li>Palletizing, labeling, and repacking</li>
           <li>Container stuffing and deconsolidation</li>
-          <li>Inventory coordination and dispatch support</li>
+          <li>Inventory and stock visibility support</li>
         </ul>
       </div>
-      <div>
-        <a href="contact.html" class="service-link">Inquire Storage →</a>
-      </div>
+      <div><a href="contact.html" class="service-link">Inquire Storage →</a></div>
     </div>
 
-    <!-- Service 6: Project Cargo & Breakbulk -->
     <div class="service-card">
       <div>
-        <div class="icon">🏗️</div>
+        <div class="icon">🧰</div>
         <h2>Project Cargo & Breakbulk</h2>
-        <p>Specialized logistics planning for oversized, heavy, or non-standard cargo requiring careful routing, coordination, and technical handling.</p>
+        <p>Specialized cargo handling for oversized, heavy, or complex loads requiring route engineering, careful planning, and dedicated oversight.</p>
         <ul>
           <li>Heavy-lift and oversize cargo planning</li>
-          <li>Breakbulk and project shipping coordination</li>
-          <li>Route feasibility and equipment selection</li>
-          <li>Site delivery and load supervision support</li>
+          <li>Route and equipment assessment</li>
+          <li>Packaging and loading coordination</li>
+          <li>Site-to-port and site-to-airport movement</li>
         </ul>
       </div>
-      <div>
-        <a href="contact.html" class="service-link">Discuss Project Cargo →</a>
-      </div>
+      <div><a href="quote.html" class="service-link">Discuss Project Cargo →</a></div>
     </div>
 
-    <!-- Service 7: Cargo Insurance & Risk Support -->
     <div class="service-card">
       <div>
         <div class="icon">🛡️</div>
-        <h2>Cargo Insurance & Risk Protection</h2>
-        <p>Practical risk management solutions designed to protect goods in transit and strengthen buyer confidence across every shipping stage.</p>
+        <h2>Cargo Insurance Support</h2>
+        <p>Risk mitigation solutions and documentation support to help protect goods against loss, damage, and transit-related exposure.</p>
         <ul>
-          <li>Transit and all-risk insurance coordination</li>
-          <li>Claims documentation and cargo loss support</li>
-          <li>Carrier vetting and shipment assessment</li>
-          <li>Risk mitigation guidance for high-value goods</li>
+          <li>Transit insurance coordination</li>
+          <li>Claims guidance and document assistance</li>
+          <li>Carrier and commodity risk review</li>
+          <li>Shipment protection advisory</li>
         </ul>
       </div>
+      <div><a href="contact.html" class="service-link">Protect Your Cargo →</a></div>
+    </div>
+
+    <div class="service-card">
       <div>
-        <a href="contact.html" class="service-link">Protect Your Cargo →</a>
+        <div class="icon">📊</div>
+        <h2>Freight Consultation</h2>
+        <p>Strategic route planning and solution design for shippers seeking cost-efficiency, transit certainty, and better supplier coordination.</p>
+        <ul>
+          <li>Route optimization and mode selection</li>
+          <li>Carrier and vendor recommendations</li>
+          <li>Cost and transit-time review</li>
+          <li>Operational planning support</li>
+        </ul>
       </div>
+      <div><a href="contact.html" class="service-link">Talk to an Advisor →</a></div>
     </div>
 
-  </div>
-
-  <!-- Standard Operating Workflow Section -->
-  <div class="workflow-section">
-    <div style="text-align: center; margin-bottom: 20px;">
-      <h2 style="color: var(--primary-dark); font-size: 1.8rem; margin: 0 0 10px;">Our Standardized Logistics Workflow</h2>
-      <p style="color: var(--text-gray); font-size: 0.95rem;">A structured process ensuring cargo visibility, compliance, and performance from origin to final delivery.</p>
-    </div>
-    
-    <div class="workflow-steps">
-      <div class="step">
-        <span class="step-number">1</span>
-        <h4>Quote & Scope</h4>
-        <p>Review cargo requirements, routing, and trade terms.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">2</span>
-        <h4>Booking & Planning</h4>
-        <p>Secure capacity, schedule movement, and prepare documentation.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">3</span>
-        <h4>Origin Handling</h4>
-        <p>Coordinate pickup, packing, labeling, and export clearance.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">4</span>
-        <h4>Transit Monitoring</h4>
-        <p>Track milestones across port, airport, road, and delivery points.</p>
-      </div>
-      <div class="step">
-        <span class="step-number">5</span>
-        <h4>Customs & Final Delivery</h4>
-        <p>Support import clearance and ensure timely destination handover.</p>
-      </div>
-    </div>
   </div>
 </div>
 
-<!-- Why Choose Us Section -->
-<section class="why-section">
-  <div class="container" style="text-align: center;">
-    <h2 style="color: var(--brand-yellow); font-size: 2rem; margin-top: 0;">🌍 Why Businesses Choose Airsell Cargo</h2>
-    <div class="why-grid">
-      <div class="why-item">✓ Experienced freight forwarding team supporting air, ocean, land, and multimodal cargo solutions</div>
-      <div class="why-item">✓ Strategic hubs at Hargeisa Airport (HGA) and Berbera Port (BBO) for efficient regional connectivity</div>
-      <div class="why-item">✓ Strong compliance focus with customs documentation, filings, and operational oversight</div>
-      <div class="why-item">✓ Responsive 24/7 coordination backed by transparent communication and cargo visibility</div>
+<section class="process-section container">
+  <div class="section-heading">
+    <h3>How We Work</h3>
+    <p>Our process is designed to keep your cargo moving clearly, efficiently, and with operational visibility from booking through delivery.</p>
+  </div>
+
+  <div class="workflow-steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h4>Consult</h4>
+      <p>We review your cargo profile, route, timing, and service requirements.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h4>Plan</h4>
+      <p>We recommend the best route, service mode, and documentation path.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h4>Book</h4>
+      <p>We coordinate carriers, agents, and handling partners across the network.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <h4>Monitor</h4>
+      <p>We maintain shipment visibility and respond quickly to changing conditions.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">5</div>
+      <h4>Deliver</h4>
+      <p>Your cargo reaches its destination with the required compliance and support.</p>
     </div>
   </div>
 </section>
 
-<!-- Footer Section -->
+<section class="why-section">
+  <div class="container">
+    <div class="section-heading" style="color:#fff; margin-bottom:0;">
+      <h3 style="color:#fff;">Why Businesses Choose Airsell Cargo</h3>
+      <p style="color:#cbd5e1;">Practical freight-forwarding support designed around reliability, communication, and trade execution.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">Dedicated handling for importers, exporters, and regional businesses moving time-sensitive cargo.</div>
+      <div class="why-item">Clear communication and proactive coordination across service channels and gateways.</div>
+      <div class="why-item">Experienced understanding of East African trade corridors, customs procedures, and route planning.</div>
+      <div class="why-item">Flexible service options from urgent air freight to commercial ocean, road, and warehouse solutions.</div>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
-  <div class="footer-grid">
+  <div class="container footer-grid">
     <div class="footer-col">
       <h3>Airsell Cargo</h3>
-      <p style="color: #94a3b8;">Connecting Somaliland to the World</p>
-      <p style="color: #64748b; font-size: 0.85rem;">© 2026 Airsell Cargo. All rights reserved.</p>
+      <p style="color:#94a3b8; margin-bottom: 10px;">Connecting Somaliland to the World</p>
+      <p style="color:#64748b; font-size:0.85rem;">© 2026 Airsell Cargo. All rights reserved.</p>
     </div>
 
     <div class="footer-col">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="quote.html">Quote</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="quote.html">Get a Quote</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="booking.html">Cargo Booking</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h3>Locations</h3>
-      <p style="color: #94a3b8; margin-bottom: 6px;">📍 Hargeisa Airport (HGA)</p>
-      <p style="color: #94a3b8;">📍 Berbera Port (BBO)</p>
+      <p style="color:#94a3b8; margin-bottom: 6px;">📍 Hargeisa Airport (HGA)</p>
+      <p style="color:#94a3b8;">📍 Berbera Port (BBO)</p>
     </div>
 
     <div class="footer-col">
       <h3>Contact</h3>
-      <p style="color: #94a3b8; margin-bottom: 6px;">✉️ info@airsellcargo.com</p>
-      <p style="color: #94a3b8;">📞 +252 63 412 5763</p>
+      <p style="color:#94a3b8; margin-bottom: 6px;">✉️ info@airsellcargo.com</p>
+      <p style="color:#94a3b8;">📞 +252 63 412 5763</p>
     </div>
 
     <div class="footer-col">
