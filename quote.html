@@ -36,7 +36,6 @@
       padding: 0 24px; 
     }
     
-    /* Top Bar */
     .top-bar {
       background: var(--primary-dark);
       color: #94a3b8;
@@ -55,7 +54,6 @@
     .top-bar-info a { color: #cbd5e1; text-decoration: none; }
     .top-bar-info a:hover { color: var(--brand-yellow); }
 
-    /* Header Navigation */
     header { 
       background: #ffffff; 
       border-bottom: 5px solid var(--brand-yellow); 
@@ -102,7 +100,6 @@
       font-weight: 700 !important;
     }
 
-    /* Hero Banner */
     .hero-banner { 
       text-align: center; 
       padding: 50px 20px 60px; 
@@ -124,7 +121,6 @@
       font-size: 1rem;
     }
 
-    /* Form Layout */
     .quote-section {
       padding: 60px 0;
       background: var(--bg-light);
@@ -199,7 +195,6 @@
       background: var(--primary-dark);
     }
 
-    /* Section Divider in Form */
     .form-section-title {
       font-size: 1.15rem;
       color: var(--primary-dark);
@@ -210,7 +205,6 @@
       font-weight: 700;
     }
 
-    /* Footer */
     .site-footer { 
       background: var(--primary-dark); 
       color: #ffffff; 
@@ -246,7 +240,6 @@
 </head>
 <body>
 
-<!-- Top Navigation Bar -->
 <div class="top-bar">
   <div class="container top-bar-flex">
     <div class="top-bar-info">
@@ -259,7 +252,6 @@
   </div>
 </div>
 
-<!-- Header Navigation -->
 <header>
   <div class="container header-flex">
     <div class="logo">
@@ -275,13 +267,13 @@
         <li><a href="about.html">About</a></li>
         <li><a href="tracking.html">Tracking</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="quote.html" class="btn-nav-cta active" aria-current="quote.html">Get a Quote</a></li>
+        <li><a href="booking.html">Book Cargo</a></li>
+        <li><a href="quote.html" class="btn-nav-cta active" aria-current="page">Get a Quote</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Hero Section -->
 <section class="hero-banner">
   <div class="container">
     <h1>Request a Freight Rate</h1>
@@ -289,20 +281,16 @@
   </div>
 </section>
 
-<!-- Form Container Section -->
 <main class="quote-section">
   <div class="container">
     <div class="quote-card">
       <form id="quoteForm" action="https://formsubmit.co/1233a26cfc71ac026ab36a3426f8e462" method="POST" enctype="multipart/form-data">
-        
-        <!-- FormSubmit Configuration Settings -->
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_subject" value="🚚 Freight Quote: {Service_Required} ({Origin_Hub} ➔ {Destination_Hub}) - {Full_Name}">
         <input type="hidden" name="_next" value="https://airsellcargo.com/thank.html">
         <input type="hidden" name="_autoresponse" value="Thank you for contacting Airsell Cargo. We have received your freight quote request and our team will get back to you shortly.">
 
-        <!-- 1. Route Selection -->
         <div class="form-section-title">1. Transport Route & Service Mode</div>
         <div class="form-grid-3">
           <div class="form-group">
@@ -325,7 +313,6 @@
           </div>
         </div>
 
-        <!-- 2. Cargo Details -->
         <div class="form-section-title">2. Cargo Specifications</div>
         <div class="form-grid-3">
           <div class="form-group">
@@ -342,7 +329,6 @@
           </div>
         </div>
 
-        <!-- 3. Contact Information -->
         <div class="form-section-title">3. Contact Details</div>
         <div class="form-grid-2">
           <div class="form-group">
@@ -372,7 +358,6 @@
   </div>
 </main>
 
-<!-- Footer Section -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
@@ -388,6 +373,7 @@
         <li><a href="quote.html">Get a Quote</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Cargo Booking</a></li>
       </ul>
     </div>
 
