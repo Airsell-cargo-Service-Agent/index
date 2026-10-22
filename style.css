@@ -9,23 +9,23 @@
 
 :root {
     /* Brand Colors */
-    --brand-blue-light: #004e92;
-    --brand-blue-dark: #000428;
-    --brand-red: #dc3545;
-    --brand-yellow: #ffc107;
-    --brand-green: #28a745;
-    --brand-purple: #6f42c1;
-    --brand-orange: #fd7e14;
-    --primary-dark: #1e293b;
+    --brand-primary: #0b1f3a;
+    --brand-secondary: #1f4e79;
+    --brand-accent: #d4a64d;
+    --brand-red: #c83e3e;
+    --brand-green: #2b8a5b;
+    --brand-purple: #5b4b8a;
+    --brand-orange: #d97706;
+    --primary-dark: #0b1f3a;
     
     /* Neutral Palette */
-    --light-bg: #f8fafc;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
+    --light-bg: #f7f9fc;
+    --text-main: #1e2a37;
+    --text-muted: #6b7a8f;
     --white: #ffffff;
     
     /* UI Elements */
-    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 10px 25px rgba(11, 31, 58, 0.08);
     --radius: 12px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -57,8 +57,8 @@ header {
     background: var(--white);
     top: 0;
     z-index: 1000;
-    border-bottom: 4px solid var(--brand-yellow);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-bottom: 4px solid var(--brand-accent);
+    box-shadow: 0 4px 12px rgba(11,31,58,0.15);
 }
 
 .header-flex {
@@ -84,9 +84,9 @@ header {
 }
 
 .nav-links a {
-    color: var(--brand-red);
+    color: var(--brand-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.95rem;
     padding: 10px 5px;
     position: relative;
@@ -94,11 +94,11 @@ header {
 }
 
 .nav-links a:hover {
-    color: var(--brand-yellow);
+    color: var(--brand-accent);
 }
 
 .nav-links a.active {
-    color: var(--brand-yellow);
+    color: var(--brand-secondary);
 }
 
 .nav-links a.active::after {
@@ -108,14 +108,14 @@ header {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--brand-yellow);
+    background: var(--brand-accent);
 }
 
 /* =========================================
    3. HERO SECTION
    ========================================= */
 .services-hero {
-    background: linear-gradient(135deg, var(--brand-blue-light), var(--brand-blue-dark));
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
     padding-block: 5rem;
     color: var(--white);
     text-align: center;
@@ -131,24 +131,24 @@ header {
     font-size: 1rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .cta-btn {
     display: inline-block;
-    background: var(--brand-yellow);
-    color: var(--brand-blue-dark);
+    background: var(--brand-accent);
+    color: var(--brand-primary);
     padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     transition: all var(--transition);
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 166, 77, 0.28);
 }
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 6px 20px rgba(212, 166, 77, 0.38);
 }
 
 /* =========================================
@@ -161,7 +161,7 @@ header {
 }
 
 .welcome-section h2 {
-    color: var(--brand-blue-light);
+    color: var(--brand-primary);
     margin-bottom: 20px;
     font-size: 2.25rem;
     font-weight: 700;
@@ -184,7 +184,7 @@ header {
 
 .section-title {
     text-align: center;
-    color: var(--brand-blue-light);
+    color: var(--brand-primary);
     font-size: 2rem;
     margin-bottom: 50px;
     font-weight: 700;
@@ -210,7 +210,7 @@ header {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(11, 31, 58, 0.12);
 }
 
 .service-icon {
@@ -241,7 +241,7 @@ header {
 
 .service-list li::before {
     content: '→';
-    color: var(--brand-yellow);
+    color: var(--brand-accent);
     font-weight: bold;
     margin-right: 10px;
 }
@@ -254,9 +254,9 @@ header {
 
 /* Service Card Colors */
 .service-card.red { border-top-color: var(--brand-red); }
-.service-card.yellow { border-top-color: var(--brand-yellow); }
+.service-card.yellow { border-top-color: var(--brand-accent); }
 .service-card.green { border-top-color: var(--brand-green); }
-.service-card.blue { border-top-color: var(--brand-blue-light); }
+.service-card.blue { border-top-color: var(--brand-secondary); }
 .service-card.purple { border-top-color: var(--brand-purple); }
 .service-card.orange { border-top-color: var(--brand-orange); }
 
@@ -270,7 +270,7 @@ header {
 
 .compliance-section h2 {
     text-align: center;
-    color: var(--brand-blue-light);
+    color: var(--brand-primary);
     font-size: 2rem;
     margin-bottom: 50px;
     font-weight: 700;
@@ -293,7 +293,7 @@ header {
 
 .standard-badge:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.1);
 }
 
 .badge-icon {
@@ -304,7 +304,7 @@ header {
 }
 
 .standard-badge h4 {
-    color: var(--brand-blue-light);
+    color: var(--brand-primary);
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
@@ -319,7 +319,7 @@ header {
    7. CALL TO ACTION
    ========================================= */
 .cta {
-    background: linear-gradient(135deg, var(--brand-blue-light), var(--brand-blue-dark));
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
     color: var(--white);
     padding: 80px 0;
     text-align: center;
@@ -339,20 +339,20 @@ header {
 
 .cta .btn-primary {
     display: inline-block;
-    background: var(--brand-yellow);
-    color: var(--brand-blue-dark);
+    background: var(--brand-accent);
+    color: var(--brand-primary);
     border-radius: 50px;
     padding: 12px 40px;
     text-decoration: none;
     font-weight: 800;
     font-size: 1rem;
     transition: all var(--transition);
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 4px 15px rgba(212, 166, 77, 0.28);
 }
 
 .cta .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 6px 20px rgba(212, 166, 77, 0.38);
 }
 
 /* =========================================
@@ -376,7 +376,7 @@ footer {
 }
 
 .footer-column h4 {
-    color: var(--brand-yellow);
+    color: var(--brand-accent);
     margin-bottom: 20px;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
@@ -392,14 +392,14 @@ footer {
 }
 
 .footer-links a {
-    color: #94a3b8;
+    color: #b7c9d9;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--brand-yellow);
+    color: var(--brand-accent);
 }
 
 .whatsapp-btn {
@@ -528,7 +528,7 @@ footer {
   margin-bottom: 15px;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--brand-red);
+  color: var(--brand-primary);
   border-bottom: 2px solid #e2e8f0;
   padding-bottom: 5px;
 }
@@ -557,8 +557,8 @@ form textarea {
 form input:focus,
 form select:focus,
 form textarea:focus {
-  border-color: var(--brand-red);
-  box-shadow: 0 0 0 3px rgba(204,0,0,0.1);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(11, 31, 58, 0.08);
   outline: none;
 }
 
@@ -576,7 +576,7 @@ form textarea:focus {
 }
 
 .wa-button:hover {
-  background: #006600;
+  background: #1c6c44;
   transform: translateY(-2px);
 }
 
